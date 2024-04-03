@@ -59,7 +59,7 @@
         foreach ($pedidos as $key => $pedido)
         {
             //  echo '<pre>';
-            //  var_dump($pedido);
+
             if ($pedido['estado']==$estado){
                 $total=0;
                 echo"      

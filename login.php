@@ -30,6 +30,7 @@
             width: 300px;
         }
     </style>
+
 </head>
 <body>
 
@@ -64,18 +65,22 @@
 
 <div class="login-container">
     <div class="login-form">
+        <?php
+        include('includes/database.php');
+        include('includes/controlador.php');
+        ?>
         <h2 class="text-center mb-4">Iniciar sesión</h2>
-        <form>
+        <form method="post" action="">
             <div class="mb-3">
                 <label for="username" class="form-label">Nombre de usuario</label>
-                <input type="text" class="form-control" id="username" placeholder="Ingrese su nombre de usuario">
+                <input type="text" class="form-control" name="username" placeholder="Ingrese su nombre de usuario">
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña">
+                <input type="password" class="form-control" name="password" placeholder="Ingrese su contraseña">
             </div>
             <div class="d-grid">
-                <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+                <button type="submit" class="btn btn-primary" name="ingresar" value="valor">Iniciar sesión</button>
             </div>
         </form>
     </div>
