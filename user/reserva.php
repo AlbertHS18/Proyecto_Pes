@@ -82,7 +82,12 @@
             </div>
             <div class="mb-3">
                 <label for="guests" class="form-label"><i class="fas fa-users"></i> Cantidad de personas</label>
-                <input type="number" class="form-control" id="guests" min="1" max="6" required>
+                <select class="form-select" id="guests">
+                    <option selected disabled>Selecciona</option>
+                    <?php for ($i = 1; $i <= 6; $i++) : ?>
+                        <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                    <?php endfor; ?>
+                </select>
             </div>
             <br>
             <div class="d-grid">
