@@ -6,6 +6,7 @@
     <title>Explosión de sabor</title>  
     <link rel="shortcut icon" href="imagenes/logo.png" type="image/x-icon" /> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         body {
             background-image: url('imagenes/fondo3.jpg');
@@ -46,16 +47,13 @@
 
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
-
-                    <li class="nav-item"><a class="nav-link" href="index.php"><span>Inicio</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="create.php"><span>Pedidos</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="reserva.php"><span>Reserva</span></a></li>
-                     <li class="nav-item"><a class="nav-link" href="informacion.php"><span>Acerca de...</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="index.php"><span>Inicio</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="create.php"><span>Pedidos</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="reserva.php"><span>Reserva</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="informacion.php"><span>Acerca de...</span></a></li>
             </ul>
-
             <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href=""><span>Usuario</span></a></li>
-
+                <li class="nav-item"><a class="nav-link" href=""><span>Usuario</span></a></li>
             </ul>
         </div>
     </div>
@@ -73,6 +71,20 @@
                 <label for="time" class="form-label">Hora</label>
                 <input type="time" class="form-control" id="time">
             </div>
+            <div class="mb-3">
+                <label for="table" class="form-label"><i class="fas fa-chair"></i> Mesa</label>
+                <select class="form-select" id="table">
+                    <option selected disabled>Selecciona una mesa</option>
+                    <?php for ($i = 1; $i <= 8; $i++) : ?>
+                        <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                    <?php endfor; ?>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="guests" class="form-label"><i class="fas fa-users"></i> Cantidad de personas</label>
+                <input type="number" class="form-control" id="guests" min="1" max="6" required>
+            </div>
+            <br>
             <div class="d-grid">
                 <button type="submit" class="btn btn-primary">Reservar</button>
             </div>

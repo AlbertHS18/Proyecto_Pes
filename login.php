@@ -1,11 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
-    <head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explosión de sabor</title>  
-    <link rel="shortcut icon" href="imagenes/logo.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="imagenes/logo.png" type="image/x-icon" /> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    
     <style>
         body {
             background-image: url('imagenes/fondo.jpg');
@@ -29,16 +30,24 @@
             border-radius: 10px;
             width: 300px;
         }
+        .register-link {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .register-link a {
+            color: #fff;
+            text-decoration: underline;
+        }
     </style>
-
 </head>
+
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         <a class="navbar-brand" href="#">
             <img src="imagenes/logo.ico" alt="Logo del restaurante" class="mr-2">
-             Restaurant explosión de sabor
+            Restaurant explosión de sabor
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -48,15 +57,12 @@
 
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
-
-                    <li class="nav-item"><a class="nav-link" href="index.php"><span>Inicio</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="menu.php"><span>Menú</span></a></li>
-                     <li class="nav-item"><a class="nav-link" href="informacion.php"><span>Acerca de...</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="index.php"><span>Inicio</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="menu.php"><span>Menú</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="informacion.php"><span>Acerca de...</span></a></li>
             </ul>
-
             <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="login.php"><span>Login</span></a></li>
-
+                <li class="nav-item"><a class="nav-link" href="login.php"><span>Login</span></a></li>
             </ul>
         </div>
     </div>
@@ -78,13 +84,16 @@
                 <label for="password" class="form-label">Contraseña</label>
                 <input type="password" class="form-control" name="password" placeholder="Ingrese su contraseña">
             </div>
+            <div class="register-link">
+                <p><a href="registro.php">Regístrate aquí</a></p>
+            </div>
+            <br>
             <div class="d-grid">
                 <button type="submit" class="btn btn-primary" name="ingresar" value="valor">Iniciar sesión</button>
             </div>
         </form>
     </div>
     <script>
-      
         setTimeout(function(){
             document.getElementById('access-denied').style.display = 'none';
         }, 3000);
@@ -99,4 +108,5 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
