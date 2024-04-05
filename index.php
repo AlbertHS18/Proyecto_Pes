@@ -48,7 +48,6 @@
 
                     <li class="nav-item"><a class="nav-link" href="index.php"><span>Inicio</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="menu.php"><span>Menú</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="reserva.php"><span>Reserva</span></a></li>
                      <li class="nav-item"><a class="nav-link" href="informacion.php"><span>Acerca de...</span></a></li>
             </ul>
 
@@ -144,7 +143,7 @@
 
 
         <header>
-            <!-- place navbar here -->
+            
         </header>
         <main>
 
@@ -154,7 +153,7 @@
         <br>
         <br>
 
-    <!-- Sección de horarios-->
+   
 <div class="text-center bg-light p-4">
     <h3 class="mb-4"> Horario de atención </h3>
     <div>
@@ -192,7 +191,7 @@
 
 
 
-        <!-- Bootstrap JavaScript Libraries -->
+        
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
             integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

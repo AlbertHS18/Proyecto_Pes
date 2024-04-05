@@ -51,7 +51,6 @@
 
                     <li class="nav-item"><a class="nav-link" href="index.php"><span>Inicio</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="menu.php"><span>Menú</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="reserva.php"><span>Reserva</span></a></li>
                      <li class="nav-item"><a class="nav-link" href="informacion.php"><span>Acerca de...</span></a></li>
             </ul>
 
@@ -84,6 +83,12 @@
             </div>
         </form>
     </div>
+    <script>
+      
+        setTimeout(function(){
+            document.getElementById('access-denied').style.display = 'none';
+        }, 3000);
+    </script>
 </div>
 
 <footer class="bg-dark text-light text-center py-3">
