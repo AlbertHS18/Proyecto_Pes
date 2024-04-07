@@ -111,7 +111,7 @@
                 <img src="imagenes/colaboradores/m.jpg"class="card-img-top"alt="Chef 1"/>
                 <div class="card-body">
                     <h5 class="card-title">Chef 2</h5>
-                    <p class="card-text">La chef Marco </p>
+                    <p class="card-text">El chef Marco </p>
                     <div class="social-icons mt-3">
                         <a href="#" class="text-dark me-2"><i class="fab fa-facebook"></i></a>
                         <a href="#" class="text-dark me-2"><i class="fab fa-instagram"></i></a>
@@ -126,7 +126,7 @@
                 <img src="imagenes/colaboradores/a.jpg"class="card-img-top"alt="Chef 1"/>
                 <div class="card-body">
                     <h5 class="card-title">Chef 3</h5>
-                    <p class="card-text">La chef Antonio </p>
+                    <p class="card-text">El chef Antonio </p>
                     <div class="social-icons mt-3">
                         <a href="#" class="text-dark me-2"><i class="fab fa-facebook"></i></a>
                         <a href="#" class="text-dark me-2"><i class="fab fa-instagram"></i></a>

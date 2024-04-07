@@ -33,6 +33,9 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">  
 </head>
 
+
+
+
 <body class="content">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
@@ -54,24 +57,26 @@
             <li class="nav-item"><a class="nav-link" href="vistareserva.php"><span> Vista de reservas</span></a></li>
             </ul>
 
-<ul class="navbar-nav ms-auto">
-<li class="nav-item"><a class="nav-link" href=""><span>Admin</span></a></li>
+            <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href=""><span>Admin</span></a></li>
 
-</ul>
-</div>
-</div>
-</nav>
-    <br>
-    <br>
-    <div class="container-fluid content" id="all">
-        <div class="row">      
-            <?php
-            session_start();
-            if (isset($_SESSION['pedidos'])){    
-                MostrarPedido($_SESSION['pedidos'], 'Finalizado', true); 
-            }
-            ?>      
+            </ul>
         </div>
-    </div> 
+    </div>
+</nav>
+
+<div class="container-fluid content mtop">
+    <div class="row">      
+        <?php
+        session_start();
+        // Elimina la línea que muestra la sesión
+        // print_r($_SESSION);
+        if (isset($_SESSION['pedidos'])){    
+            MostrarPedido($_SESSION['pedidos'], 'Pendiente', true); 
+        }
+        ?>      
+    </div>
+</div> 
 </body>
+
 </html>

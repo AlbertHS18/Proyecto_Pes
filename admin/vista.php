@@ -51,7 +51,7 @@
 
             <li class="nav-item"><a class="nav-link active" href="vista.php"><span>Vista de Pedidos</span> </a></li>
             <li class="nav-item"><a class="nav-link" href="finished.php"><span>Vista de Pedidos Terminados</span></a></li>
-            <li class="nav-item"><a class="nav-link" href=""><span> Vista de reservas</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="vistareserva.php"><span> Vista de reservas</span></a></li>
             </ul>
 
             <ul class="navbar-nav ms-auto">
