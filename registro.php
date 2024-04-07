@@ -117,21 +117,19 @@
 
     <div class="login-container">
         <div class="login-form">
-
-            <!-- Formulario de registro -->
             <h2 class="text-center mb-4">Registrarse</h2>
-            <form method="post" action="registro.php">
+            <form method="post" action="procesar.php">
                 <div class="mb-3 input-group">
                     <span class="input-group-text"><i class="fas fa-user"></i></span>
                     <input type="text" class="form-control" name="new-username" placeholder="Nombre de usuario" required>
                 </div>
                 <div class="mb-3 input-group">
-                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
-                    <input type="password" class="form-control" name="new-password" placeholder="Contraseña" required>
-                </div>
-                <div class="mb-3 input-group">
                     <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                     <input type="email" class="form-control" name="email" placeholder="Correo electrónico" required>
+                </div>
+                <div class="mb-3 input-group">
+                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                    <input type="password" class="form-control" name="new-password" placeholder="Contraseña" required>
                 </div>
                 <div class="mb-3 input-group">
                     <span class="input-group-text"><i class="fas fa-phone"></i></span>

@@ -77,8 +77,8 @@
         <h2 class="text-center mb-4">Iniciar sesión</h2>
         <form method="post" action="">
             <div class="mb-3">
-                <label for="username" class="form-label">Nombre de usuario</label>
-                <input type="text" class="form-control" name="username" placeholder="Ingrese su nombre de usuario">
+                <label for="username" class="form-label">Correo electronico</label>
+                <input type="text" class="form-control" name="username" placeholder="Ingrese su correo">
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Contraseña</label>
