@@ -31,7 +31,7 @@
 
     <body>
     
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         <a class="navbar-brand" href="#">
             <img src="imagenes/logo.ico" alt="Logo del restaurante" class="mr-2">
@@ -45,16 +45,20 @@
 
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
-
-                    <li class="nav-item"><a class="nav-link" href="index.php"><span>Inicio</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="create.php"><span>Pedidos</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="reserva.php"><span>Reserva</span></a></li>
-                     <li class="nav-item"><a class="nav-link" href="informacion.php"><span>Acerca de...</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="index.php"><span>Inicio</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="create.php"><span>Pedidos</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="reserva.php"><span>Reserva</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="informacion.php"><span>Acerca de...</span></a></li>
             </ul>
-
             <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href=""><span>Usuario</span></a></li>
-
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Usuario
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="../index.php">Cerrar sesión</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
