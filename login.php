@@ -93,11 +93,13 @@
             </div>
         </form>
     </div>
+
     <script>
         setTimeout(function(){
             document.getElementById('access-denied').style.display = 'none';
         }, 3000);
     </script>
+    
 </div>
 
 <footer class="bg-dark text-light text-center py-3">

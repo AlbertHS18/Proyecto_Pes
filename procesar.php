@@ -26,7 +26,7 @@ if ($resultado_verificar->num_rows > 0) {
     header("location:login.php");
 } else {
 
-    $sql = "INSERT INTO usuarios (usuario, correo, contrasena,  telefono ) VALUES ('$nombre_usuario', '$correo', '$telefono', '$contrasena')";
+    $sql = "INSERT INTO usuarios (usuario, correo, contrasena,  telefono ) VALUES ('$nombre_usuario', '$correo', '$contrasena', '$telefono')";
     
     if ($conn->query($sql) === TRUE) {
         header("location:login.php");

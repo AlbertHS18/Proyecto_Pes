@@ -125,6 +125,16 @@ ul, li, ol{
 /*------------------------------------------------------------------
     HEADER
 -------------------------------------------------------------------*/
+.dropdown-menu .dropdown-item {
+    color: white; 
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #333; 
+}
+
+
+
 
 #mainNav{
 	background-color: #ffffff;
@@ -507,6 +517,8 @@ ul, li, ol{
         opacity: 0;
     }
 }
+
+
 
 
 
