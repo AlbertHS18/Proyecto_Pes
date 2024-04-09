@@ -3,6 +3,45 @@
     if(file_exists('includes/variables.php'))
 	    include_once('includes/variables.php');
     
+
+
+if (isset($_POST['action'])) {
+    switch ($_POST['action']) {
+
+        case 'eliminar_producto':
+            eliminarProducto();
+            break;
+        default:
+            // Acción no reconocida
+            break;
+    }
+}
+
+function eliminarProducto()
+{
+    if (!isset($_SESSION['orden'])) {
+        $_SESSION['orden'] = array();
+    }
+
+    // Verificar si se recibió el ID del producto a eliminar
+    if (isset($_POST['id_producto'])) {
+        $id_producto = $_POST['id_producto'];
+
+        // Verificar si el producto existe en la sesión $_SESSION['orden']
+        if (array_key_exists($id_producto, $_SESSION['orden'])) {
+            // Eliminar el producto de la sesión $_SESSION['orden']
+            unset($_SESSION['orden'][$id_producto]);
+            header('Location: create.php#menu');
+        } else {
+            // Manejar el caso donde el producto no existe en la orden
+            header('Location: error.php');
+        }
+    } else {
+        // Manejar el caso donde no se reciben los datos esperados
+        header('Location: error.php');
+    }
+}
+
     if($_POST['action'] == 'add_producto'){   
         if(! isset($_SESSION['orden']))
 		    $_SESSION['orden'] = array();
@@ -63,3 +102,5 @@
         $_SESSION['pedidos'][$_POST['id']]['estado']='Finalizado';
         header('Location: vista.php');
     }
+
+
