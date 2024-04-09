@@ -1,60 +1,32 @@
 <?php
-   function Menu(array $productos) //Muestra todos los productos dismponibles
-   {     
-       if(! is_null($productos))
-       {
-           foreach ($productos as $key => $producto)
-           {
-               echo"                           
-               <div class='col-md-4'>
-                   <form action='logic.php' method='POST'>
-                       <div class='services-inner-box'>
-                           <div class='ser-icon'>
-                               <img src='images/productos/{$producto['imagen']}' class='img-fluid' alt='' />
-                           </div>
-                           <h2> {$producto['nombre']}</h2>
-                           <h4 class='text-center'>$ {$producto['precio']}</h4>
-                           <div class='d-flex'>
-                               <input type='hidden' name='action' value='add_producto'>
-                               <input type='hidden' name='id' value='$key'>
-                               <input type='number' min=1 value=1 class='form-control form-control-sm' name='cantidad' id='cantidad' required></input>
-                               <button type='submit' class='btn'>Agregar</button>
-                           </div>
-                       </div>
-                   </form> 
-               </div>                         
-               ";
-           }
-       }
-   }
-    function Menu1(array $productos) //Muestra todos los productos dismponibles
-	{     
-		if(! is_null($productos))
-		{
-			foreach ($productos as $key => $producto)
-            {
-                echo"                           
+function Menu(array $productos)
+{
+    if (!empty($productos)) {
+        foreach ($productos as $key => $producto) {
+            echo "                           
                 <div class='col-md-4'>
                     <form action='logic.php' method='POST'>
                         <div class='services-inner-box'>
-                            <div class='card'>
-                                <div class='ser-icon'>
-                                    <br>
-                                    <img src='images/productos/{$producto['imagen']}' class='img-fluid' alt='' />
-                                </div>
-                                
-                                <h3> {$producto['nombre']}</h3>
-                                <h5 class='text-center'>$ {$producto['precio']}</h5>
+                            <div class='ser-icon'>
+                                <img src='images/productos/{$producto['imagen']}' class='img-fluid' alt='' />
+                            </div>
+                            <h2> {$producto['nombre']}</h2>
+                            <h4 class='text-center'>$ {$producto['precio']}</h4>
+                            <div class='d-flex'>
+                                <input type='hidden' name='action' value='add_producto'>
+                                <input type='hidden' name='id' value='$key'>
+                                <input type='number' min=1 value=1 class='form-control form-control-sm' name='cantidad' id='cantidad' required></input>
+                                <button type='submit' class='btn'>Agregar</button>
                             </div>
                         </div>
                     </form> 
                 </div>                         
-                ";
-		    }
+            ";
         }
-	}
+    }
+}
 
-    function MostrarPedido(array $pedidos, string $estado, bool $all = false)
+function MostrarPedido(array $pedidos, string $estado, bool $all = false)
 {
     foreach ($pedidos as $key => $pedido) {
         if ($pedido['estado'] == $estado) {
@@ -137,3 +109,4 @@
         }
     }
 }
+?>
