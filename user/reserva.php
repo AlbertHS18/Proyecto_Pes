@@ -1,11 +1,3 @@
-<?php	
-    session_start();
-    include('includes/variables.php');
-    if(file_exists('includes/funciones.php'))
-		require_once('includes/funciones.php');
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,14 +53,7 @@
                 <li class="nav-item"><a class="nav-link" href="informacion.php"><span>Acerca de...</span></a></li>
             </ul>
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <?php echo $_SESSION['correo'] ?>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="../index.php">Cerrar sesión</a></li>
-                    </ul>
-                </li>
+                <li class="nav-item"><a class="nav-link" href=""><span>Usuario</span></a></li>
             </ul>
         </div>
     </div>
@@ -77,18 +62,18 @@
 <div class="reservation-container">
     <div class="reservation-form">
         <h2 class="text-center mb-4">Reserva de mesa</h2>
-        <form>
+        <form action="procesar_reserva.php" method="POST">
             <div class="mb-3">
                 <label for="date" class="form-label">Fecha</label>
-                <input type="date" class="form-control" id="date">
+                <input type="date" class="form-control" id="date" name="fecha">
             </div>
             <div class="mb-3">
                 <label for="time" class="form-label">Hora</label>
-                <input type="time" class="form-control" id="time">
+                <input type="time" class="form-control" id="time" name="hora">
             </div>
             <div class="mb-3">
                 <label for="table" class="form-label"><i class="fas fa-chair"></i> Mesa</label>
-                <select class="form-select" id="table">
+                <select class="form-select" id="table" name="mesa">
                     <option selected disabled>Selecciona una mesa</option>
                     <?php for ($i = 1; $i <= 8; $i++) : ?>
                         <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
@@ -97,7 +82,7 @@
             </div>
             <div class="mb-3">
                 <label for="guests" class="form-label"><i class="fas fa-users"></i> Cantidad de personas</label>
-                <select class="form-select" id="guests">
+                <select class="form-select" id="guests" name="persona">
                     <option selected disabled>Selecciona</option>
                     <?php for ($i = 1; $i <= 6; $i++) : ?>
                         <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
@@ -106,12 +91,11 @@
             </div>
             <br>
             <div class="d-grid">
-                <button type="submit" class="btn btn-primary">Reservar</button>
+                <button type="submit" class="btn btn-primary" value="reserva">Reservar</button>
             </div>
         </form>
     </div>
 </div>
-
 
 <footer class="bg-dark text-light text-center py-3">
     <div class="container">
