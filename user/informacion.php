@@ -1,3 +1,11 @@
+<?php	
+    session_start();
+    include('includes/variables.php');
+    if(file_exists('includes/funciones.php'))
+		require_once('includes/funciones.php');
+?>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -69,7 +77,7 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Usuario
+                    <?php echo $_SESSION['correo'] ?>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item" href="../index.php">Cerrar sesión</a></li>

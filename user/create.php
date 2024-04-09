@@ -42,7 +42,7 @@
     <?php	   
     if (isset($_GET['message']) && $_GET['message']=='true'){
         echo"<script>
-                alert('Ya posses un pedido en curso, cuando sea entregado podrá realizar su próximo pedido');
+                alert('Ya poses un pedido en curso, cuando sea entregado podrá realizar su próximo pedido');
              </script>";
     }
     ?>
@@ -69,7 +69,7 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Usuario
+                    <?php echo $_SESSION['correo'] ?>
                     </a>
                     
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
