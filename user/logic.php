@@ -63,3 +63,23 @@
         $_SESSION['pedidos'][$_POST['id']]['estado']='Finalizado';
         header('Location: vista.php');
     }
+
+
+    function eliminarProducto()
+{
+    if (!isset($_SESSION['orden'])) {
+        $_SESSION['orden'] = array();
+    }
+    if (isset($_POST['id_producto'])) {
+        $id_producto = $_POST['id_producto'];
+        if (array_key_exists($id_producto, $_SESSION['orden'])) {
+          
+            unset($_SESSION['orden'][$id_producto]);
+            header('Location: create.php#menu');
+        } else {
+            header('Location: error.php');
+        }
+    } else {
+        header('Location: error.php');
+    }
+}
