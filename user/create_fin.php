@@ -18,7 +18,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="https://www.paypal.com/sdk/js?client-id=AcGHRF2LrmsIAn0TtPmQjEQvwqkktFTeGNSFcpoYmDpJ7qE6JcJC30aavEa6fEd7msKHXUaGrcbeEj_k&currency=DOP"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AcGHRF2LrmsIAn0TtPmQjEQvwqkktFTeGNSFcpoYmDpJ7qE6JcJC30aavEa6fEd7msKHXUaGrcbeEj_k&currency=MXN"></script>
 </head> 
 
 <body>
@@ -107,27 +107,29 @@
             color: 'gold', 
             shape: 'rect', 
             label: 'pay' 
+
         },
-        createOrder: function(data, actions) {
-            // Esta función se llama cuando se inicia el proceso de pago.
-            // Aquí puedes definir la lógica para crear la orden de PayPal.
-            return actions.order.create({
-                purchase_units: [{
-                    amount: {
-                        value: '1.00' // Monto del pago
+            createorder: function(data, actions) {
+                // Esta función se llama cuando se inicia el proceso de pago.
+                // // Aqui puedes decir la lógica para crear la orden de PayPal.
+                return actions.order.create({
+                    purchase_units: [{
+                    amount:{
+                    value: '1.00' // Monto del pago
                     }
-                }]
-            });
-        },
-        onApprove: function(data, actions) {
-            // Esta función se llama cuando el pago ha sido aprobado por el usuario.
-            return actions.order.capture().then(function(details) {
-                // Aquí puedes ejecutar acciones adicionales después de que se ha completado el pago.
+                    }]
+                });
+            },
+                onApprove: function(data, actions) {
+                // Esta función se llama cuando el pago ha sido aprobado por el usuario.
+                return actions.order.capture().then(function(details) {
+                // // Aqui puedes ejecutar acciones adicionales después de que se ha completado elpago.
                 alert('Pago completado por ' + details.payer.name.given_name);
-            });
-        }
-    }).render('#paypal-button-container');
-</script>
+                });
+                }
+            }).render('#paypal-button-container');
+
+                </script>
 
 
 
