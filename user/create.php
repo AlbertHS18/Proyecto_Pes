@@ -33,7 +33,7 @@
         />
 
     <link rel="stylesheet" href="style.css">
-	<script src="js/modernizr.js"></script> 
+
 
 </head>
 
@@ -66,7 +66,7 @@
                 <li class="nav-item"><a class="nav-link" href="reserva.php"><span>Reserva</span></a></li>
                 <li class="nav-item"><a class="nav-link" href="informacion.php"><span>Acerca de...</span></a></li>
             </ul>
-            <ul class="navbar-nav ms-auto">
+            <ul>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <?php echo $_SESSION['correo'] ?>
@@ -75,6 +75,7 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item" href="../index.php">Cerrar sesión</a></li>
                     </ul>
+
                 </li>
             </ul>
         </div>

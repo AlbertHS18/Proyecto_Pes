@@ -18,9 +18,13 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-</head>
+
+    <script src="https://www.paypal.com/sdk/js?client-id=AcGHRF2LrmsIAn0TtPmQjEQvwqkktFTeGNSFcpoYmDpJ7qE6JcJC30aavEa6fEd7msKHXUaGrcbeEj_k"></script>
+
+</head> 
 
 <body>
+    
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="#">
@@ -89,15 +93,51 @@
                         <label> Notas del Pedido:</label>
                         <textarea name="nota" form="form" class="form-control form-control-sm" rows="5"></textarea>
                     </div>
+
                     <input type='hidden' name='action' value='add_pedido'>
+                    
                     <button type="submit" class="btn"
-                        style="display: block; margin-top: 20px;">Enviar Pedido
+                         style="display: block; margin-top: 20px;">Enviar Pedido
                     </button>
+           
+                    <div id="paypal-button-container"></div>
+<script>
+    paypal.Buttons({
+        style: {
+            layout: 'horizontal', // Opciones: horizontal, vertical
+            color: 'gold', // Opciones: gold, blue, silver, black
+            shape: 'rect', // Opciones: rect, pill
+            label: 'paypal' // Opciones: paypal, checkout, pay, buynow, installment
+        },
+        createOrder: function(data, actions) {
+            // Esta función se llama cuando se inicia el proceso de pago.
+            // Aquí puedes definir la lógica para crear la orden de PayPal.
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value: '1.00' // Monto del pago
+                    }
+                }]
+            });
+        },
+        onApprove: function(data, actions) {
+            // Esta función se llama cuando el pago ha sido aprobado por el usuario.
+            return actions.order.capture().then(function(details) {
+                // Aquí puedes ejecutar acciones adicionales después de que se ha completado el pago.
+                alert('Pago completado por ' + details.payer.name.given_name);
+            });
+        }
+    }).render('#paypal-button-container');
+</script>
+
+
                 </form>
             </div>
         </div>
     </div>
     </div>
+
+
     <br>
     <br>
     <footer class="bg-dark text-light text-center py-3">
