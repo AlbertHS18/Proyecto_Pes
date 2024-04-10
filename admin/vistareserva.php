@@ -66,55 +66,63 @@
         }, 3000);
     </script>
     
-<?php
+    <div class="container">
+        <h1>Reservas</h1>
+        <div class="row">
+            <?php
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            $database = "pes";
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "pes";
+            $conn = new mysqli($servername, $username, $password, $database);
 
-$conn = new mysqli($servername, $username, $password, $database);
+            if ($conn->connect_error) {
+                die("Error de conexión: " . $conn->connect_error);
+            }
 
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
-}
+            if(isset($_POST['eliminar'])) {
+                $id_reserva_a_eliminar = $_POST['id_reserva'];
+                $sql_delete = "DELETE FROM reservas WHERE id_reserva = $id_reserva_a_eliminar";
+                if ($conn->query($sql_delete) === TRUE) {
+                    echo '<div id="access-denied" class="alert alert-danger">La reserva ha sido eliminada exitosamente.</div>';
+                } else {
+                    echo '<div id="access-denied" class="alert alert-danger">Error al eliminar la reserva: .</div>'.$conn->error;
+                }
+            }
 
-if(isset($_POST['eliminar'])) {
-    $id_reserva_a_eliminar = $_POST['id_reserva'];
-    $sql_delete = "DELETE FROM reservas WHERE id_reserva = $id_reserva_a_eliminar";
-    if ($conn->query($sql_delete) === TRUE) {
-        echo '<div id="access-denied" class="alert alert-danger">La reserva ha sido eliminada exitosamente.</div>';
-    } else {
-        echo '<div id="access-denied" class="alert alert-danger">Error al eliminar la reserva: .</div>'.$conn->error;
-    }
-}
+            $sql = "SELECT * FROM reservas r, usuarios u WHERE r.correo = u.correo ";
+            $result = $conn->query($sql);
 
-$sql = "SELECT * FROM reservas r,usuarios u WHERE r.correo = u.correo ";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-
-    while($row = $result->fetch_assoc()) {
-?>
-        <div class="card">
-            <div>Usuario: <?php echo $row["usuario"]; ?></div>
-            <div>Correo: <?php echo $row["correo"]; ?></div>
-            <div>Mesa: <?php echo $row["mesa"]; ?></div>
-            <div>Personas: <?php echo $row["personas"]; ?></div>
-            <div>Fecha: <?php echo $row["fecha"]; ?></div>
-            <div>Hora: <?php echo $row["hora"]; ?></div>
-
-            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                <input type="hidden" name="id_reserva" value="<?php echo $row["id_reserva"]; ?>">
-                <input type="submit" name="eliminar" value="Eliminar">
-            </form>
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+            ?>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-text">
+                                    <p><strong>Usuario:</strong> <?php echo $row["usuario"]; ?></p>
+                                    <p><strong>Correo:</strong> <?php echo $row["correo"]; ?></p>
+                                    <p><strong>Mesa:</strong> <?php echo $row["mesa"]; ?></p>
+                                    <p><strong>Personas:</strong> <?php echo $row["personas"]; ?></p>
+                                    <p><strong>Fecha:</strong> <?php echo $row["fecha"]; ?></p>
+                                    <p><strong>Hora:</strong> <?php echo $row["hora"]; ?></p>
+                                </div>
+                                <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                                    <input type="hidden" name="id_reserva" value="<?php echo $row["id_reserva"]; ?>">
+                                    <input type="submit" name="eliminar" value="Eliminar" class="btn btn-danger">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+            <?php
+                }
+            } else {
+                echo "No se encontraron resultados.";
+            }
+            ?>
         </div>
-<?php
-    }
-} else {
-    echo "No se encontraron resultados.";
-}
-?>
+    </div>
  
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>

@@ -167,19 +167,26 @@
     <!-- Sección de horarios-->
 <div class="text-center bg-light p-4">
     <h3 class="mb-4"> Horario de atención </h3>
+    <br>
     <div>
-        <p> <strong>Lunes a Viernes </strong></p>
-        <p> <strong>11:00 a.m. - 10:00 p.m. </strong></p>
+    <p> <strong>Lunes a Viernes </strong></p>
+        <p> <strong>Almuerzo: 12:00 p.m. - 2:00 p.m. </strong></p>
+        <p> <strong>Cena: 7:00 p.m. - 10:00 p.m. </strong></p>
+        <br>
     </div>
 
     <div>
         <p> <strong>Sábado</strong></p>
-        <p> <strong>12:00 a.m. - 5:00 p.m. </strong></p>
+        <p> <strong>Almuerzo: 12:00 p.m. - 2:00 p.m. </strong></p>
+        <p> <strong>Cena: 7:00 p.m. - 10:00 p.m. </strong></p>
+        <br>
     </div>
 
     <div>
         <p> <strong>Domingo</strong></p>
-        <p> <strong>7:00 a.m. - 2:00 p.m. </strong></p>
+        <p> <strong>Almuerzo: 12:00 p.m. - 2:00 p.m. </strong></p>
+        <p> <strong>Cena: 7:00 p.m. - 10:00 p.m. </strong></p>
+        <br>
     </div>
 
 

@@ -83,8 +83,9 @@
             </div>
             <div class="mb-3">
                 <label for="time" class="form-label">Hora</label>
-                <input type="time" class="form-control" id="time" name="hora">
+                <input type="time" class="form-control" id="time" name="hora" min="12:00" max="22:00">
             </div>
+
             <div class="mb-3">
                 <label for="table" class="form-label"><i class="fas fa-chair"></i> Mesa</label>
                 <select class="form-select" id="table" name="mesa">
